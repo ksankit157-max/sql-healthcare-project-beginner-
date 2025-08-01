@@ -11,9 +11,8 @@ This project is a beginner-friendly SQL exercise where I explored patterns in a 
 
 ## Files
 
-- `queries.sql` – My main SQL queries
-- `screenshots/` – Snapshots of query results
-- `dataset_link.txt` – Link to the Kaggle dataset used
+- `https://www.db-fiddle.com/f/gBEAAC4m6kPU4Wz4sNjaz3/1` – My main SQL queries
+- `(https://www.kaggle.com/datasets/prasad22/healthcare-dataset)` – Link to the Kaggle dataset used
 
 ## Tools Used
 
