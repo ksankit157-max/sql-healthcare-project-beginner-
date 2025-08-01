@@ -21,10 +21,6 @@ This project is a beginner-friendly SQL exercise where I explored patterns in a 
 - [Kaggle Dataset](https://www.kaggle.com/your-dataset-link) (synthetic)
 - GitHub for version control and documentation
 
-## 📊 Sample Output
-
-![Example Output](screenshots/avg_billing_by_condition.jpg)
-
 ##  Next Steps
 
 - Incorporate subqueries and JOINs
