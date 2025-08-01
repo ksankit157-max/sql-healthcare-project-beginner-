@@ -1,0 +1,56 @@
+-- 1. Average Billing Amount by Medical Condition
+-- 📸 Screenshot: SELECT AVG FROM GROUP ORDER
+SELECT 
+  Medical_cond, 
+  AVG(Billing_amount) AS avg_bill
+FROM Healthcare_records
+GROUP BY Medical_cond
+ORDER BY avg_bill DESC;
+
+-- 2. Hospital with Maximum Emergency Admissions
+-- 📸 Screenshot: STEP 1 to find max pat admitted in Emergency
+SELECT 
+  Hospital, 
+  COUNT(*) AS Emergency_Adm
+FROM Healthcare_records
+WHERE Adm_type = 'Emergency'
+GROUP BY Hospital
+ORDER BY Emergency_Adm DESC;
+
+-- 3. Filtering Hospitals with Only 1 Emergency Visit
+-- 📸 Screenshot: use of Having to filter emergency visit equal to 1
+SELECT 
+  Hospital, 
+  COUNT(*) AS Emergency_Adm
+FROM Healthcare_records
+WHERE Adm_type = 'Emergency'
+GROUP BY Hospital
+HAVING COUNT(*) = 1;
+
+-- 4. Doctor Who Treated the Most Patients
+-- 📸 Screenshot: Most no of patients treated by the doc
+SELECT 
+  Doctor, 
+  COUNT(*) AS Patient_treated
+FROM Healthcare_records
+GROUP BY Doctor
+ORDER BY Patient_treated DESC
+LIMIT 1;
+
+-- 5. Average Billing Amount for 'Abnormal' Test Results
+-- 📸 Screenshot: average billing amount for Abnormal patients
+SELECT 
+  Test_result, 
+  AVG(Billing_amount) AS Avg_bill
+FROM Healthcare_records
+WHERE Test_result = 'Abnormal'
+GROUP BY Test_result;
+
+-- 6. Insurance Provider–Wise Billing Comparison
+-- 📸 Screenshot: Diff in ins bills
+SELECT 
+  Insurance_provider, 
+  ROUND(AVG(Billing_amount), 2) AS avg_bill
+FROM Healthcare_records
+GROUP BY Insurance_provider
+ORDER BY avg_bill DESC;
